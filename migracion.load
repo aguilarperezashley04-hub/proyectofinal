@@ -1,0 +1,8 @@
+LOAD DATABASE
+     FROM mysql://root:13778892@127.0.0.1:3306/employees
+     INTO postgresql://ashley:13778892@127.0.0.1:5432/employees
+
+ WITH include drop, create tables, create indexes, reset sequences
+
+ CAST type datetime to timestamptz,
+      type date drop not null drop default using zero-dates-to-null;
